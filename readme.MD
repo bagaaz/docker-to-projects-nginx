@@ -42,7 +42,7 @@ Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dent
 
 ## Informações Adicionais
 
-- Para acessar o container (por exemplo, para executar comandos como `php artisan` para Laravel), use o seguinte comando: `docker exec -it webserver bash`.
+- Para acessar o container (por exemplo, para executar comandos como `php artisan` para Laravel), use o seguinte comando: `docker exec -it php bash`.
 - Se você encontrar problemas de permissão no VSCode, você pode resolver isso executando o seguinte comando dentro da pasta raiz do subdomínio: `chown -R devuser.devuser .`
 
 ## Contribuição
