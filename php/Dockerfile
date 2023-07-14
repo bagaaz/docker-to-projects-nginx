@@ -23,4 +23,9 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN /opt/venv/bin/python -m ensurepip
 RUN /opt/venv/bin/python -m pip install --upgrade pip
 
+RUN find /var/www -type d -exec chmod 0755 {} \;
+RUN find /var/www -type f -exec chmod 0644 {} \;
+RUN chown -Rf www-data:www-data /var/www/html
+RUN chown -Rf www-data:www-data /var/www/html
+
 WORKDIR /var/www/html

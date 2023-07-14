@@ -28,6 +28,10 @@
             <ul>
             <?php
                 foreach($folders as $folder) {
+
+                $infosFile = file_get_contents('../../' . $folder . '/info.json');
+                $infos = json_decode($infosFile, true);
+                print_r($infos);
             ?>
             <li class="border-t border-gray-200">
                 <div class="flex px-4 py-5 sm:px-6 items-center">
