@@ -17,7 +17,7 @@ Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dent
 
 1. **Clone o repositório**: Para clonar o repositório, você precisará ter o Git instalado em sua máquina. Abra um terminal e digite o seguinte comando:
     ```bash
-    git clone git@github.com:bagaaz/docker-to-projects.git
+    git clone git@github.com:bagaaz/docker-to-projects-nginx.git
     ```
     Este comando irá clonar o repositório para a sua máquina local.
 
@@ -29,7 +29,7 @@ Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dent
 
 3. **Execute o Docker Compose**: Agora, você precisa rodar o Docker Compose para construir e iniciar os serviços definidos no arquivo `docker-compose.yml`. Faça isso com o seguinte comando:
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
     Este comando irá construir e iniciar os serviços em segundo plano. O parâmetro `-d` indica que os serviços devem ser iniciados em segundo plano, enquanto o parâmetro `--build` indica que o Docker Compose deve construir as imagens antes de iniciar os serviços.
 
