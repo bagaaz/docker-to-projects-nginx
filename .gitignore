@@ -1,6 +1,4 @@
 /site/*
 !/site/root
 *.pdf
-*.key
-*.pem
 .env
