@@ -1,6 +1,12 @@
 # Seu Dockerfile
 FROM php:8.2-fpm
 
+ARG UID=1000
+ARG GID=1000
+
+RUN groupadd -g $GID devuser
+RUN useradd -m -u $UID -g $GID devuser
+
 # Instala extensões
 RUN docker-php-ext-install pdo_mysql
 
@@ -27,5 +33,7 @@ RUN find /var/www -type d -exec chmod 0755 {} \;
 RUN find /var/www -type f -exec chmod 0644 {} \;
 RUN chown -Rf www-data:www-data /var/www/html
 RUN chown -Rf www-data:www-data /var/www/html
+
+USER devuser
 
 WORKDIR /var/www/html
