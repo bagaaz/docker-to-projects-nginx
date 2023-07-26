@@ -31,17 +31,19 @@
 
                 $infosFile = file_get_contents('../../' . $folder . '/info.json');
                 $infos = json_decode($infosFile, true);
-                print_r($infos);
             ?>
             <li class="border-t border-gray-200">
                 <div class="flex px-4 py-5 sm:px-6 items-center">
                     <h3 class="flex-1 w-64 text-lg leading-6 font-medium text-gray-900">
-                        <?php echo file_get_contents('../../'.$folder.'/name.txt') ?>
+                        <?= $infos['name'] ?>
                     </h3>
                     <p class="grow mt-1 text-sm text-gray-900 sm:mt-0 flex-grow">
-                        <?php echo file_get_contents('../../'.$folder.'/description.txt') ?>
+                        <?= $infos['description'] ?>
                     </p>
                     <div class="flex-1 w-14 flex justify-end">
+                        <a href="<?= $infos['link'] ?>" class="py-2 px-4 mr-2 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
+                            <i data-feather="github" alt="Github"></i>
+                        </a>
                         <a href="https://<?php echo $folder; ?>.localhost" class="py-2 px-4 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
                             <span>Acesse</span>
                         </a>
