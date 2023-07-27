@@ -37,3 +37,5 @@ RUN chown -Rf www-data:www-data /var/www/html
 USER devuser
 
 WORKDIR /var/www/html
+
+EXPOSE 9000 3000
