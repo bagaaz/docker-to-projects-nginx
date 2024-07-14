@@ -8,16 +8,16 @@ RUN groupadd -g $GID devuser
 RUN useradd -m -u $UID -g $GID devuser
 
 # Instala extensões
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql mysqli
 
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install -y zip unzip
+RUN apt-get install -y zip unzip nano
 
 # Instala o Composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 # Instala o Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 RUN apt-get install -y nodejs
 
 # Instala o Python

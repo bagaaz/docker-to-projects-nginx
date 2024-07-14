@@ -20,6 +20,7 @@ services:
     build: ./php
     volumes:
       - ./site:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/conf.d/custom-php.ini
     networks:
       - app-network
 

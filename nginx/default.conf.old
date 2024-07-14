@@ -34,6 +34,26 @@ server {
 
 server {
     listen 80;
+    server_name node.localhost;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name node.localhost;
+
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    location / {
+        proxy_pass http://php:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 80;
     server_name pma.localhost;
     return 301 https://$host$request_uri;
 }
@@ -46,41 +66,29 @@ server {
     ssl_certificate_key /etc/nginx/ssl/server.key;
 
     location / {
-        root /usr/share/phpmyadmin;
-        try_files $uri /index.php$is_args$args;
+        proxy_pass http://phpmyadmin;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
     }
-
-    location ~ \.php$ {
-        root /usr/share/phpmyadmin;
-        include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_pass php:9000;
-        fastcgi_index index.php;
-        fastcgi_intercept_errors off;
-        fastcgi_buffer_size 16k;
-        fastcgi_buffers 4 16k;
-    }
-
-    error_log /var/log/nginx/error.log;
-    access_log /var/log/nginx/access.log;
 }
 
 server {
     listen 80;
-    server_name ~^(?<vhost>.+)\.wordpress\.localhost$;
+    server_name wordpress.devconecta.com.br;
     return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ~^(?<vhost>.+)\.wordpress\.localhost$;
+    listen [::]:443 ssl;
+    server_name wordpress.devconecta.com.br;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/devconecta.com.br/devconecta.com.br.pem;
+    ssl_certificate_key /etc/nginx/ssl/devconecta.com.br/devconecta.com.br.key;
 
     client_max_body_size 100M;
 
-    root /var/www/html/$vhost;
+    root /var/www/html/wordpress;
     index index.php index.html index.htm;
 
     location / {
@@ -90,7 +98,7 @@ server {
     location ~ \.php$ {
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_pass php:9000;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
         fastcgi_index index.php;
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
@@ -105,8 +113,8 @@ server {
         add_header Cache-Control "public, must-revalidate, proxy-revalidate";
     }
 
-    error_log /var/log/nginx/wordpress_error.log;
-    access_log /var/log/nginx/wordpress_access.log;
+    error_log /var/log/nginx/wordpress.devconecta.com.br_error.log;
+    access_log /var/log/nginx/wordpress.devconecta.com.br_access.log;
 }
 
 server {
@@ -114,11 +122,12 @@ server {
     listen [::]:80;
 
     server_name ~^(?<vhost>.+)\.localhost$;
-    return 301 https://$host$request_uri;
+    return 301 https://$host$request_uri; 
 }
 
 server {
     listen 443 ssl;
+    listen [::]:443 ssl ipv6only=on;
     server_name ~^(?<vhost>.+)\.localhost$;
 
     ssl_certificate /etc/nginx/ssl/server.crt;
@@ -126,17 +135,7 @@ server {
 
     location / {
         root /var/www/html/$vhost/public;
-        index index.html index.php;
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf)$ {
-        root /var/www/html/$vhost/public;
-        try_files $uri =404;
-        access_log off;
-        log_not_found off;
-        expires max;
-        add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+        try_files $uri /index.php$is_args$args;
     }
 
     location ~ \.php$ {
@@ -153,3 +152,4 @@ server {
     error_log /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
 }
+

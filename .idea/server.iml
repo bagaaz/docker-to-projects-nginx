@@ -6,6 +6,27 @@
       <sourceFolder url="file://$MODULE_DIR$/site/gaat" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/site/thonson" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/site/todo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/devconecta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/joao" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/martierin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/admin-menu-editor/includes/PHP-CSS-Parser/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/elementor-pro" isTestSource="false" packagePrefix="ElementorPro" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/elementor/includes" isTestSource="false" packagePrefix="Elementor" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/instagram-feed" isTestSource="false" packagePrefix="InstagramFeed" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/instagram-feed/admin" isTestSource="false" packagePrefix="InstagramFeed" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/instagram-feed/inc" isTestSource="false" packagePrefix="InstagramFeed" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/jet-engine/framework/jet-dashboard/inc" isTestSource="false" packagePrefix="Jet_Dashboard" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/jet-engine/includes/components" isTestSource="false" packagePrefix="Jet_Engine" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/jet-engine/includes/modules/forms" isTestSource="false" packagePrefix="Jet_Engine" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/jet-smart-filters/framework/jet-dashboard/inc" isTestSource="false" packagePrefix="Jet_Dashboard" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/smart-slider-3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc" isTestSource="false" packagePrefix="WP_Rocket" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/Addon" isTestSource="false" packagePrefix="WPMedia" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/Dependencies/ActionScheduler/classes" isTestSource="false" packagePrefix="Action_Scheduler" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/deprecated" isTestSource="false" packagePrefix="WP_Rocket" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/deprecated/Engine" isTestSource="false" packagePrefix="WP_Rocket" />
+      <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
