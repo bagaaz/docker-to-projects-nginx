@@ -1,5 +1,5 @@
 # php/Dockerfile
-FROM php:8.2-fpm
+FROM php:8.3-fpm
 
 ARG UID=1000
 ARG GID=1000
