@@ -41,7 +41,7 @@
                         <?= $infos['description'] ?? 'Sem descição adicionada' ?>
                     </p>
                     <div class="flex justify-end mt-2 sm:mt-0">
-                        <a href="<?= $infos['link'] ?>" class="py-2 px-4 mr-2 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
+                        <a href="<?= $infos['link'] ?? '#' ?>" class="py-2 px-4 mr-2 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
                             <i data-feather="github" alt="Github"></i>
                         </a>
                         <a href="https://<?php echo $folder; ?>.localhost" class="py-2 px-4 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
