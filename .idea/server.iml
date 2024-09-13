@@ -27,6 +27,7 @@
       <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/deprecated" isTestSource="false" packagePrefix="WP_Rocket" />
       <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-content/plugins/wp-rocket/inc/deprecated/Engine" isTestSource="false" packagePrefix="WP_Rocket" />
       <sourceFolder url="file://$MODULE_DIR$/site/wordpress/wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/site/livewire" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

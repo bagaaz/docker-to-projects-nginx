@@ -29,16 +29,16 @@
             <?php
                 foreach($folders as $folder) {
 
-                $infosFile = file_get_contents('../../' . $folder . '/info.json');
+                $infosFile = @file_get_contents('../../' . $folder . '/info.json');
                 $infos = json_decode($infosFile, true);
             ?>
             <li class="border-t border-gray-200">
                 <div class="flex flex-col sm:flex-row px-4 py-3 sm:px-6 items-center">
                     <h3 class="flex-shrink-0 w-full sm:w-64 text-lg leading-6 font-medium text-gray-900 mb-2 sm:mb-0 text-center sm:text-left">
-                        <?= $infos['name'] ?>
+                        <?= $infos['name'] ?? ucfirst($folder) ?>
                     </h3>
                     <p class="mt-1 text-sm text-gray-900 flex-grow text-center sm:text-left">
-                        <?= $infos['description'] ?>
+                        <?= $infos['description'] ?? 'Sem descição adicionada' ?>
                     </p>
                     <div class="flex justify-end mt-2 sm:mt-0">
                         <a href="<?= $infos['link'] ?>" class="py-2 px-4 mr-2 border border-transparent shadow-sm text-m font-medium rounded-md text-white bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" target="_blank">
