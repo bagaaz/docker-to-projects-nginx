@@ -16,6 +16,8 @@ RUN apt-get update -y && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install pdo_mysql mysqli gd
 
+RUN apt-get install -y less
+
 # Configura o sendmail_path para MailHog
 RUN echo "sendmail_path = \"/usr/sbin/sendmail -S mailhog:1025\"" > /usr/local/etc/php/conf.d/mailhog.ini
 
