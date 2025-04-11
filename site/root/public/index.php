@@ -1,4 +1,6 @@
 <?php
+    phpinfo();
+
     $scan = scandir('../../');
     $folders = array();
     foreach($scan as $folder) {

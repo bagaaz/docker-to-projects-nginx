@@ -1,3 +1,4 @@
+FROM composer:latest AS composer
 FROM php:8.3-fpm
 
 ARG UID=1000
@@ -17,6 +18,10 @@ RUN apt-get update -y && apt-get install -y \
     && docker-php-ext-install pdo_mysql mysqli gd
 
 RUN apt-get install -y less
+
+COPY 90-xdebug.ini "${PHP_INI_DIR}/conf.d/"
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
 
 # Configura o sendmail_path para MailHog
 RUN echo "sendmail_path = \"/usr/sbin/sendmail -S mailhog:1025\"" > /usr/local/etc/php/conf.d/mailhog.ini
@@ -51,4 +56,4 @@ USER devuser
 
 WORKDIR /var/www/html
 
-EXPOSE 9000 3000
+EXPOSE 9000 3000 8000 9003
