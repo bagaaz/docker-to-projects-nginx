@@ -1,5 +1,5 @@
 FROM composer:latest AS composer
-FROM php:8.3-fpm
+FROM php:8.4-fpm
 
 ARG UID=1000
 ARG GID=1000
@@ -40,10 +40,10 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
     && wp --info
 
 # Instala o Python
-RUN apt-get install -y python3.11 python3.11-venv
+RUN apt-get install -y python3.13 python3.13-venv
 
 # Cria um ambiente virtual Python e instala o Pip
-RUN python3.11 -m venv /opt/venv
+RUN python3.13 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN /opt/venv/bin/python -m ensurepip
 RUN /opt/venv/bin/python -m pip install --upgrade pip
