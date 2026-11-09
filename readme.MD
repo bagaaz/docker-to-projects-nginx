@@ -1,4 +1,4 @@
-# Docker to Projects
+# Docker to Projects · Nginx
 
 ## Descrição
 
@@ -11,7 +11,7 @@ Este é um ambiente de desenvolvimento dockerizado que contém as seguintes tecn
 - Python 3.11.2
 - Node 20.3.0
 
-Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dentro do diretório `sites/` é tratada como um subdomínio do localhost. Além disso, o Apache está configurado para criar automaticamente um subdomínio para cada nova pasta adicionada ao diretório `sites/`.
+Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dentro do diretório `site/` é tratada como um subdomínio do localhost. Além disso, o Nginx está configurado para criar automaticamente um subdomínio para cada nova pasta adicionada ao diretório `site/`.
 
 ## Instruções de Uso
 
@@ -23,7 +23,7 @@ Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dent
 
 2. **Navegue até o diretório raiz do projeto**: Uma vez que o repositório tenha sido clonado, você precisará navegar até o diretório raiz do projeto. Para isso, use o seguinte comando:
     ```bash
-    cd docker-to-projects
+    cd docker-to-projects-nginx
     ```
     Este comando irá levar você para o diretório raiz do projeto.
 
@@ -33,7 +33,7 @@ Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dent
     ```
     Este comando irá construir e iniciar os serviços em segundo plano. O parâmetro `-d` indica que os serviços devem ser iniciados em segundo plano, enquanto o parâmetro `--build` indica que o Docker Compose deve construir as imagens antes de iniciar os serviços.
 
-4. **Crie uma nova pasta**: Adicione uma nova pasta no diretório `sites/`. O nome desta pasta será usado como o subdomínio. Por exemplo, se você criar uma pasta chamada `example`, você poderá acessar o site através do endereço `example.localhost`.
+4. **Crie uma nova pasta**: Adicione uma nova pasta no diretório `site/`. O nome desta pasta será usado como o subdomínio. Por exemplo, se você criar uma pasta chamada `example`, você poderá acessar o site através do endereço `example.localhost`.
 
 5. **Prepare o ponto de entrada do site**: Dentro de cada pasta do site, crie uma subpasta chamada `public` e adicione um arquivo `index` (por exemplo, `index.php` ou `index.html`). Este será o ponto de entrada para o seu site.
 
